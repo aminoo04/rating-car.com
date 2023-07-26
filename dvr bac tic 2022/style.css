@@ -1,0 +1,104 @@
+
+@keyframes tit {
+    0% {
+      color: darkred;
+      
+      transform: translateY(-10px);
+      
+    }
+    25%{
+        transform: translateX(40px);
+        transform: translateY(40px);
+        
+    }
+    50% {
+      color: rgb(16, 8, 75);
+      transform: translateY(-40px);
+      transform: translateX(-20px);
+    }
+    75%{
+        transform: translateY(-10px);
+        transform: translateX(10px);
+    }
+    100% {
+      color: darkred;
+      transform: translateY(100px);
+      transform: translateX(-30px);
+      
+    }
+}
+  
+
+  
+
+
+.titre h1{
+    text-align: center;
+    color: red;
+    font-style: italic;
+    animation-name: tit;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
+}
+  
+
+
+
+
+
+
+body{
+    background-color: rgb(177, 153, 17);
+}
+nav{
+    float: left;
+    background-color: rgb(219, 216, 166);
+    width: 24%;
+    height: 500px;
+    border: 2px black solid;
+}
+section{
+    float: right;
+    background-color: rgb(219, 216, 166);
+    width: 75%;
+    height: 500px;
+    border: 2px black solid;
+}
+
+.sc{
+    width: 120px;
+    height: 60px;
+    margin-left: 25px;
+}
+.y{
+    width:95%;
+    text-align: center;
+    background-color: rgb(219, 216, 166);
+}
+.men{
+    
+    text-align: center;
+    margin: 15px;
+    margin-right: 0px;
+    border-radius: 25px;
+    transition-property: background-color;
+    transition-duration: 1s;
+    
+}
+.men:hover{
+    background-color: black;
+}
+a{
+    color: rgb(17, 15, 43);;
+    text-decoration: none;
+    font-size: 20px;
+    transition-property: color ;
+    transition-duration: 1s;
+}
+a:hover{
+    color: rgb(219, 216, 166);
+}
+iframe{
+    height: 500px;
+}

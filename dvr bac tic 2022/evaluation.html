@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     function verif(x){
+       
+        test=true 
+        if (x.length!=8 || x.indexOf("/")!=2){
+          test=false
+        }
+        else{
+          s1=x.substr(0,1)
+          s2=x.substr(3)
+          if(isNaN(s1)==true || isNaN(s2)==true){
+            test=false
+          }
+        }
+        return test
+      }
+      function verif1(){
+        num=document.getElementById("num").value
+        l=document.getElementById("l").selectedIndex
+        s=document.getElementById("sec").value
+        conf=document.getElementById("conf").value
+        cond=document.getElementById("cond").value
+        c=document.getElementById("c").checked
+        
+        if (verif(num)==false){
+          alert("N° permis est invalide")
+          return false
+        }
+        if(l==0){
+          alert ('choisissez un modèle')
+          return false
+        }
+        if (isNaN(s)==true){
+          alert ("note de sécurité est invalide")
+          return false
+        }
+        else{
+          if(Number(s)>5 || Number(s<1)){
+            alert ("note de sécurité est invalide")
+          return false
+          }
+        }
+        if (isNaN(cond)==true){
+          alert ("note de conduite est invalide")
+          return false
+        }
+        else{
+          if(Number(cond)>5 || Number(cond<1)){
+            alert ("note de conduite est invalide")
+          return false
+          }
+        }
+        
+        if (isNaN(conf) == true) {
+          alert("note de confort est invalide")
+          return false
+        }
+        else {
+          if (Number(conf) > 5 || Number(conf < 1)) {
+            alert("note de confort est invalide")
+            return false
+          }
+        }
+        if(c==false){
+          alert("cochez la case!")
+          return false
+        }
+        
+        
+      }
+    </script>
+</head>
+<body>
+    <form action="evaluation.php" method="POST" onsubmit="return verif1()">
+      <fieldset>
+        N° Permis <input type="text" size="20" id="num" name="num">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Modele testé <select name="l" id="l">
+          <option value="null"></option>
+          <option value="Aminance 69">Aminance 69</option>
+          <option value="Aminance 01">Aminance 01</option>
+          <option value="Aminance 9999">Aminance 9999</option>
+          <option value="Aminance 2216">Aminance 2216</option>
+        </select><br><br><br>
+        Notes attribuées : <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sécurité : <input type="text" size="5" id="sec" name="sec"> &nbsp;&nbsp; conduite : &nbsp;&nbsp;<input type="text" id="cond" name="cond" size="5"> &nbsp;&nbsp; confort : <input id="conf" name="conf" type="text" size="5">
+        <br><br><br>
+        <input type="checkbox" name="c" id="c"> &nbsp;je ne suis pas un robot 
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" name="ann" id="ann" value="Annuler" />
+        <input type="submit" value="Valider">
+        
+        
+        
+        
+        
+        <legend>Evaluation d'un model</legend>
+      </fieldset>
+    </form>
+</body>
+</html>
